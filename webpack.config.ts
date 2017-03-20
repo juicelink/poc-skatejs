@@ -1,5 +1,3 @@
-/// <reference types="node" />
-
 import * as path from 'path';
 import * as webpack from 'webpack';
 
@@ -7,7 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const config: webpack.Configuration = {
   entry: {
-    'hello-world': "./src/hello-world"
+    'hello-world': './src/hello-world',
   },
   output: {
     filename: '[name].js',
@@ -15,7 +13,7 @@ const config: webpack.Configuration = {
     publicPath: '/assets/',    
   },
   resolve: {
-   extensions: [".tsx", ".ts", ".js"]
+   extensions: ['.tsx', '.ts', '.js']
   },
   module: {
     rules: [

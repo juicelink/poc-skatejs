@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^7.0.8",
     "@types/webpack": "~2.2.11",
     "awesome-typescript-loader": "~3.1.2",
     "css-loader": "~0.27.3",
@@ -26,6 +27,8 @@
     "webpack-dev-server": "~2.4.2"
   },
   "dependencies": {
-    "skatejs": "~4.6.7"
+    "bootstrap": "^3.3.7",
+    "preact": "^7.2.0",
+    "preact-custom-element": "^2.0.0"
   }
 }

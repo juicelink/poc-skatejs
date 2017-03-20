@@ -9,7 +9,7 @@
         //"module": "es2015",
         "target": "es5",
         "jsx": "react",
-        "jsxFactory": "skate.h"
+        "jsxFactory": "h"
     },
     "exclude": [
         "webpack.config.ts",
