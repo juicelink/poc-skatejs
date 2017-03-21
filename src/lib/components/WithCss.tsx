@@ -14,7 +14,7 @@ const WithCss = ({styles, withGlobal, children}: Props) => {
         <span>
             { (styles || addGlobal) ?
                     <style>
-                        { addGlobal ? `@import url(${mainCssUrl})` : null };
+                        { addGlobal ? `@import url(${mainCssUrl});` : null }
                         { styles? styles.toString() : null }
                     </style> : null
             }

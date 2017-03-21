@@ -14,7 +14,7 @@ const WithMainCss = <T extends Object>(Base: Constructable<T>) => {
       const { mainCssUrl } = config();
       const addGlobal = mainCssUrl && supportShadowDom;
       return (styles || addGlobal) ? <style>
-        {addGlobal ? `@import url(${mainCssUrl})` : null};
+        {addGlobal ? `@import url(${mainCssUrl});` : null}
         {styles ? styles.toString() : null}
       </style> : null
     };
