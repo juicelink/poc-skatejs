@@ -1,12 +1,12 @@
 import { Component, propString, h, setProps } from 'skatejs';
-import * as css from './hello-world.less';
-import { SGComponent } from './lib';
+import WithGlobalCss from 'lib/components/WithGlobalCss';
+import * as css from './x-hello-world-2.less';
 
 type HelloWorldProps = {
   name: string;
 };
 
-class HelloWorldComponent extends SGComponent<HelloWorldProps> {
+class HelloWorldComponent extends Component<HelloWorldProps> {
 
   static get props () {
     return {
@@ -16,14 +16,13 @@ class HelloWorldComponent extends SGComponent<HelloWorldProps> {
 
   renderCallback({ name }: HelloWorldProps) {
     return (
-        <div>
-          { this.withMainCss(css) }
+        <WithGlobalCss styles={ css } >
           <div style={{ color: 'yellow' }} class={ `row ${css.locals.helloWorld}` }>
             Hello {name} !
           </div>
-        </div>
+        </WithGlobalCss>
     );
   }
 }
 
-customElements.define('x-hello-world', HelloWorldComponent);
+customElements.define('x-hello-world-2', HelloWorldComponent);

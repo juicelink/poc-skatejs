@@ -7,8 +7,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const config: webpack.Configuration = {
   entry: {
     'bootstrap': './assets/bootstrap.less',
-    'hello-world': './src/hello-world',
-    'init': './src/init.ts'
+    'init': './src/init.ts',
+    'hello-world': './src/webComponents/helloWorld/x-hello-world',
+    'hello-world-2': './src/webComponents/helloWorld2/x-hello-world-2'
   },
   output: {
     filename: '[name].js',
@@ -16,7 +17,10 @@ const config: webpack.Configuration = {
     publicPath: '/',    
   },
   resolve: {
-   extensions: ['.tsx', '.ts', '.js']
+   extensions: ['.tsx', '.ts', '.js'],
+   alias: {
+     lib: path.resolve(__dirname, 'src/lib')
+   }
   },
   module: {
     rules: [
@@ -70,6 +74,7 @@ const config: webpack.Configuration = {
   plugins: [
     new HtmlWebpackPlugin({
       inject: 'head',
+      chunksSortMode: 'none',
       title: 'poc',
       template: 'index.ejs'
     }),

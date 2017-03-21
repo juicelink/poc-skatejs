@@ -1,0 +1,1 @@
+export type Constructable<T extends Object> = new (...args: any[]) => T;

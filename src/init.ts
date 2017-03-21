@@ -1,3 +1,3 @@
-const config = (<any>window).SGComponentsConfig;
-
-config.setMainCss('/bootstrap.css');
+window.SGComponentsConfig = {
+    mainCssUrl: '/bootstrap.css'
+};

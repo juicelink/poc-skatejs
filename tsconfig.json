@@ -9,7 +9,11 @@
         //"module": "es2015",
         "target": "es5",
         "jsx": "react",
-        "jsxFactory": "h"
+        "jsxFactory": "h",
+        "baseUrl": ".",
+        "paths": {
+            "lib/*": [ "./src/lib/*" ]
+        }
     },
     "exclude": [
         "webpack.config.ts",
