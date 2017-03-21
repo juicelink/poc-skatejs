@@ -1,10 +1,29 @@
-const registerCustomElement = require('./lib').default;
-import * as css from './hello-world.css';
+import { Component, propString, h, setProps } from 'skatejs';
+import * as css from './hello-world.less';
+import { SGComponent } from './lib';
 
-import { h } from 'preact';
+type HelloWorldProps = {
+  name: string;
+};
 
-const HelloWorldComponent = ({ name = "World", children }: any) => (
-	<p>hello {name} { children }</p>
-);
+class HelloWorldComponent extends SGComponent<HelloWorldProps> {
 
-registerCustomElement(HelloWorldComponent, "x-hello-world");
+  static get props () {
+    return {
+      name: propString
+    };
+  }
+
+  renderCallback({ name }: HelloWorldProps) {
+    return (
+        <div>
+          { this.withMainCss(css) }
+          <div style={{ color: 'yellow' }} class={ `row ${css.locals.helloWorld}` }>
+            Hello {name} !
+          </div>
+        </div>
+    );
+  }
+}
+
+customElements.define('x-hello-world', HelloWorldComponent);

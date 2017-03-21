@@ -1,4 +1,4 @@
-declare module "*.css" {
+declare module "*.less" {
     // Module with css-loader only (no style-loader)
     interface CssLoaderModule {
         toString() : string;
