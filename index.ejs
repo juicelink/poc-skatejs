@@ -10,7 +10,9 @@
   <body>
     <x-hello-world-2 name="dudulle"></x-hello-world-2>
     <script type="text/javascript">
-      $('x-hello-world-2').attr('name', 'totor');
+      var nb = 0;
+      setInterval(function(){ $('x-hello-world-2').attr('name', nb + ''); nb++; }, 1000);
+      
     </script>
   </body>
 </html>
