@@ -6,6 +6,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const config: webpack.Configuration = {
   entry: {
+    'native-shim': './src/lib/polyfills/native-shim.ts',
     'bootstrap': './assets/bootstrap.less',
     'init': './src/init.ts',
     'hello-world': './src/webComponents/helloWorld/x-hello-world',
@@ -75,23 +76,27 @@ const config: webpack.Configuration = {
   plugins: [
     new HtmlWebpackPlugin({
       inject: 'head',
-      template: 'src/demo/index.ejs'
+      template: 'src/demo/index.ejs',
+      excludeChunks: ['native-shim']
     }),
     new HtmlWebpackPlugin({
       inject: 'head',
       chunksSortMode: 'none',
       filename: 'angular.html',
-      template: 'src/demo/angular.ejs'
+      template: 'src/demo/angular.ejs',
+      excludeChunks: ['native-shim']
     }),
     new HtmlWebpackPlugin({
       inject: 'head',
       filename: 'ng.html',
-      template: 'src/demo/ng/index.ejs'
+      template: 'src/demo/ng/index.ejs',
+      excludeChunks: ['native-shim']
     }),
     new HtmlWebpackPlugin({
       inject: 'head',
       filename: 'react.html',
-      template: 'src/demo/react/index.ejs'
+      template: 'src/demo/react/index.ejs',
+      excludeChunks: ['native-shim']
     }),
     new ExtractTextPlugin({
       filename: '[name].css'
