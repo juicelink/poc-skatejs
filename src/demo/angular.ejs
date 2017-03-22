@@ -5,14 +5,14 @@
     <script src="//code.angularjs.org/1.6.3/angular.min.js"></script>
   </head>
   <body>
-    <div ng-app="app" ng-controller="helloWorldController">
+    <div ng-app="app" ng-controller="mainController">
         <x-hello-world-2 id="{{ id }}"></x-hello-world>
     </div>
     <script type="text/javascript">
       var app = angular.module('app', [])
-        .controller('helloWorldController', HelloWorldController);
+        .controller('mainController', HelloWorldController);
       HelloWorldController.$inject = ['$scope', '$interval'];
-      function HelloWorldController($scope, $interval) {
+      function MainController($scope, $interval) {
         $scope.id = 0;
         var nb = 1;
         $interval(function(){ $scope.id= nb; nb++;}, 5000);

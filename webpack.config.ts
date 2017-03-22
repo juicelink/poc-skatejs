@@ -71,6 +71,7 @@ const config: webpack.Configuration = {
       }
     ]
   },
+  
   plugins: [
     new HtmlWebpackPlugin({
       inject: 'head',
@@ -85,7 +86,7 @@ const config: webpack.Configuration = {
     new HtmlWebpackPlugin({
       inject: 'head',
       filename: 'ng.html',
-      template: 'src/demo/ng.ejs'
+      template: 'src/demo/ng/index.ejs'
     }),
     new HtmlWebpackPlugin({
       inject: 'head',
