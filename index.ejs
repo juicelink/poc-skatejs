@@ -3,15 +3,18 @@
   <head>
     <script src="https://unpkg.com/@skatejs/web-components/umd/@skatejs/web-components.min.js"></script>
     <script
-      src="https://code.jquery.com/jquery-3.2.1.min.js"
-      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-      crossorigin="anonymous"></script>
+      src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.0/es6-promise.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.js"></script>
   </head>
   <body>
     <x-hello-world-2 name="dudulle"></x-hello-world-2>
     <script type="text/javascript">
       var nb = 0;
-      setInterval(function(){ $('x-hello-world-2').attr('name', nb + ''); nb++; }, 1000);
+      /* fetch('/data.json')
+        .then(function(d){ return d.json();})
+        .then($('x-hello-world-2').attr('name', d.name); nb++; }); */
+      // setInterval(function(){ $('x-hello-world-2').attr('name', nb + ''); nb++; }, 1000);
       
     </script>
   </body>

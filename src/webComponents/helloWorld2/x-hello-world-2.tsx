@@ -1,5 +1,5 @@
 import { Component, propString, h, setProps } from 'skatejs';
-import WithGlobalCss from 'lib/components/WithGlobalCss';
+import HttpHelloWorld from './components/HttpHelloWorld';
 import * as css from './x-hello-world-2.less';
 
 type HelloWorldProps = {
@@ -14,13 +14,9 @@ class HelloWorldComponent extends Component<HelloWorldProps> {
     };
   }
 
-  renderCallback({ name }: HelloWorldProps) {
+  renderCallback({name}: HelloWorldProps) {
     return (
-        <WithGlobalCss styles={ css } >
-          <div style={{ color: 'yellow' }} class={ `row ${css.locals.helloWorld}` }>
-            Hello {name} !
-          </div>
-        </WithGlobalCss>
+        <HttpHelloWorld name={ name } />
     );
   }
 }
