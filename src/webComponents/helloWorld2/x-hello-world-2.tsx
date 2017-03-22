@@ -1,22 +1,22 @@
-import { Component, propString, h, setProps } from 'skatejs';
+import { Component, propNumber, h, setProps } from 'skatejs';
 import HttpHelloWorld from './components/HttpHelloWorld';
 import * as css from './x-hello-world-2.less';
 
 type HelloWorldProps = {
-  name: string;
+  id: number;
 };
 
 class HelloWorldComponent extends Component<HelloWorldProps> {
 
   static get props () {
     return {
-      name: propString
+      id: propNumber
     };
   }
 
-  renderCallback({name}: HelloWorldProps) {
+  renderCallback({id}: HelloWorldProps) {
     return (
-        <HttpHelloWorld name={ name } />
+        <HttpHelloWorld id={ id } />
     );
   }
 }

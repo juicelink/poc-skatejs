@@ -2,21 +2,29 @@ import { h, Component } from 'preact';
 import HelloWorld from './HelloWorld';
 
 type State = {
-    lastName: string;
-}
-
-type Props = {
     name: string;
 }
 
+type Props = {
+    id: number;
+}
+
 export default class HttpHelloWorld extends Component<Props,State> {
-    componentDidMount() {
-        fetch('/data.json')
-            .then(d => d.json())
-            .then(({ name }: any) => this.setState({ lastName: name }));
+
+    constructor(){
+        super();
+        this.state = {
+            name: ''
+        }
     }
 
-    render({name}: Props, {lastName}: State) {
-        return <HelloWorld name={`${name} ${lastName}`}/>;
+    componentWillReceiveProps({id}: Props){
+        fetch('/data.json')
+            .then(d => d.json())
+            .then(({ name }: any) => this.setState({ name: `${id} ${name}` }));
+    }
+
+    render(_: Props, state: State) {
+        return <HelloWorld {...state}/>;
     }
 }

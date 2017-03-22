@@ -8,13 +8,13 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.js"></script>
   </head>
   <body>
-    <x-hello-world-2 name="dudulle"></x-hello-world-2>
+    <x-hello-world-2 id="0"></x-hello-world-2>
     <script type="text/javascript">
       var nb = 0;
       /* fetch('/data.json')
         .then(function(d){ return d.json();})
-        .then($('x-hello-world-2').attr('name', d.name); nb++; }); */
-      setInterval(function(){ $('x-hello-world-2').attr('name', nb + ''); nb++; }, 5000);
+        .then($('x-hello-world-2').attr('id', d.id); nb++; }); */
+      setInterval(function(){ $('x-hello-world-2').attr('id'); nb++; }, 5000);
       
     </script>
   </body>

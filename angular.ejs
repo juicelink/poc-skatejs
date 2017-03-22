@@ -6,16 +6,16 @@
   </head>
   <body>
     <div ng-app="app" ng-controller="helloWorldController">
-        <x-hello-world-2 name="{{ name }}"></x-hello-world>
+        <x-hello-world-2 id="{{ id }}"></x-hello-world>
     </div>
     <script type="text/javascript">
       var app = angular.module('app', [])
         .controller('helloWorldController', HelloWorldController);
       HelloWorldController.$inject = ['$scope', '$interval'];
       function HelloWorldController($scope, $interval) {
-        $scope.name = 'dudulle';
-        var nb = 0;
-        $interval(function(){ $scope.name= '' + nb; nb++;}, 5000);
+        $scope.id = 0;
+        var nb = 1;
+        $interval(function(){ $scope.id= nb; nb++;}, 5000);
       };
     </script>
   </body>
