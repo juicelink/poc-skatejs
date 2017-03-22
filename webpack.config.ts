@@ -74,23 +74,23 @@ const config: webpack.Configuration = {
   plugins: [
     new HtmlWebpackPlugin({
       inject: 'head',
-      template: 'index.ejs'
+      template: 'src/demo/index.ejs'
     }),
     new HtmlWebpackPlugin({
       inject: 'head',
       chunksSortMode: 'none',
       filename: 'angular.html',
-      template: 'angular.ejs'
+      template: 'src/demo/angular.ejs'
     }),
     new HtmlWebpackPlugin({
       inject: 'head',
       filename: 'ng.html',
-      template: 'ng.ejs'
+      template: 'src/demo/ng.ejs'
     }),
     new HtmlWebpackPlugin({
       inject: 'head',
       filename: 'react.html',
-      template: 'react.ejs'
+      template: 'src/demo/react.ejs'
     }),
     new ExtractTextPlugin({
       filename: '[name].css'
