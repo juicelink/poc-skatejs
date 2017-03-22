@@ -91,7 +91,7 @@ const config: webpack.Configuration = {
     new HtmlWebpackPlugin({
       inject: 'head',
       filename: 'react.html',
-      template: 'src/demo/react.ejs'
+      template: 'src/demo/react/index.ejs'
     }),
     new ExtractTextPlugin({
       filename: '[name].css'

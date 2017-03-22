@@ -8,7 +8,7 @@ System.config({
     typescriptOptions: {
       // Copy of compiler options in standard tsconfig.json
       "target": "es5",
-      "module": "commonjs",
+      "module": "system",
       "moduleResolution": "node",
       "sourceMap": true,
       "emitDecoratorMetadata": true,

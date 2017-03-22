@@ -4,12 +4,10 @@
   <head>
     <title>Angular 2 QuickStart Javascript</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.0/es6-promise.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.0.0-rc.6/webcomponents-sd-ce.js"></script>
-    <script src="src/demo/native-shim.js"></script>
-    <!-- 1. Load libraries -->
-    <!-- IE required polyfill -->
+    
     <script src="https://unpkg.com/core-js/client/shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.0.0-rc.6/webcomponents-sd-ce.js"></script>
+    <!--[if !IE]><!--><script src="src/demo/native-shim.js"></script><!--<![endif]-->
     
     <script src="https://unpkg.com/zone.js@0.7.4?main=browser"></script>
     <script src="https://unpkg.com/systemjs@0.19.39/dist/system.src.js"></script>
