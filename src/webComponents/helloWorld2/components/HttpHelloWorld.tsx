@@ -18,10 +18,18 @@ export default class HttpHelloWorld extends Component<Props,State> {
         }
     }
 
+    async fetchData(id: number) {
+        const result = await fetch('/data.json');
+        const { name } = await result.json();
+        this.setState({ name: `${id} ${name}` });
+    }
+
+    componentDidMount(){
+        this.fetchData(this.props.id);
+    }
+
     componentWillReceiveProps({id}: Props){
-        fetch('/data.json')
-            .then(d => d.json())
-            .then(({ name }: any) => this.setState({ name: `${id} ${name}` }));
+        this.fetchData(id);
     }
 
     shouldComponentUpdate(_: Props, nextState: State) {
