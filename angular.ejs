@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="//unpkg.com/@skatejs/web-components/umd/@skatejs/web-components.min.js"></script>
+    <script src="//code.angularjs.org/1.6.3/angular.min.js"></script>
+  </head>
+  <body>
+    <div ng-app="app" ng-controller="helloWorldController">
+        <x-hello-world-2 name="{{ name }}"></x-hello-world>
+    </div>
+    <script type="text/javascript">
+      var app = angular.module('app', [])
+        .controller('helloWorldController', HelloWorldController);
+      HelloWorldController.$inject = ['$scope', '$interval'];
+      function HelloWorldController($scope, $interval) {
+        $scope.name = 'dudulle';
+        var nb = 0;
+        $interval(function(){ $scope.name= '' + nb; nb++;}, 1000);
+      };
+    </script>
+  </body>
+</html>
