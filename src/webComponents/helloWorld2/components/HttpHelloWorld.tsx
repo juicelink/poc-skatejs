@@ -24,6 +24,10 @@ export default class HttpHelloWorld extends Component<Props,State> {
             .then(({ name }: any) => this.setState({ name: `${id} ${name}` }));
     }
 
+    shouldComponentUpdate(_: Props, nextState: State) {
+        return JSON.stringify(this.state) !== JSON.stringify(nextState);
+    }
+
     render(_: Props, state: State) {
         return <HelloWorld {...state}/>;
     }
